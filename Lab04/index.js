@@ -263,11 +263,7 @@ app.post("/users", async (req, res) => {
     const city = address.city || null;
     const zipCode = address.zipcode || null;
 
-    if (!username || !email || !city || !website || !zipCode || !phone) {
-      return res
-        .status(400)
-        .json({ message: "Please fill all of the required fields" });
-    }
+
 
     const newUser = new User({
       username,
